@@ -1,7 +1,7 @@
-source ~/.config/vim/option.vim
-source ~/.config/vim/keymaps.vim
-source ~/.config/vim/extended.vim
-source ~/.config/vim/plugins.vim
+source ~/.config/vim/config/option.vim
+source ~/.config/vim/config/keymaps.vim
+source ~/.config/vim/config/extended.vim
+source ~/.config/vim/config/plugins.vim
 
 " set laststatus=2
 

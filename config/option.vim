@@ -35,7 +35,7 @@ set nocp
 set history=500
 set number
 set mouse=a
-
+set cursorline
 
 " Change the cursor shape
  if !has("nvim")
