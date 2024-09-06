@@ -2,13 +2,25 @@
 
 vim_dir="$HOME/.config/vim"
 if [ ! -d "$vim_dir" ]; then
-    touch "$vim_dir"
+  mkdir "$vim_dir"
 fi
 
-mv * "$vim_dir"
-tee -a $HOME/.bashrc | tee -a $HOME/.zshrc > /dev/null << EOF
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+cp -r * "$vim_dir"
+if [ -f "$HOME/.zshrc" ]; then
+  cat <<EOF | tee -a $HOME/.zshrc
 export MYVIMRC="$vim_dir/vimrc"
-alias vim="vim -u $MYVIMRC"
+alias vim="vim -u \$MYVIMRC"
 EOF
+fi
 
-
+if [ -f "$HOME/.bashrc" ]; then
+  cat <<EOF | tee -a $HOME/.bashrc
+export MYVIMRC="$vim_dir/vimrc"
+alias vim="vim -u \$MYVIMRC"
+EOF
+fi
+echo "====================="
+echo "  vim is configured"
+echo "====================="
