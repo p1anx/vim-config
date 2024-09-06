@@ -21,6 +21,9 @@ export MYVIMRC="$vim_dir/vimrc"
 alias vim="vim -u \$MYVIMRC"
 EOF
 fi
+
+ln -s $HOME/.config/vim/vimrc $HOME/.vimrc
+
 echo "====================="
 echo "  vim is configured"
 echo "====================="
