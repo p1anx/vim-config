@@ -23,7 +23,7 @@ EOF
 fi
 
 ln -s $HOME/.config/vim/vimrc $HOME/.vimrc
-
+echo "run command `:PlugInstall` in vim"
 echo "====================="
 echo "  vim is configured"
 echo "====================="
